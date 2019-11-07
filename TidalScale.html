@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<meta charset="utf-8">
+        <title>TidalScale</title>
+        <link rel="stylesheet" href="css/normalize.css">                 
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900,900i|Poppins:300,300i,400,600" rel="stylesheet">
+       
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+<nav class="dell-example">
+<a href="#" class="nav-toggle"></a>
+<h1 span style="padding-top:2em;">Traditional Server</h1>
+<img src="img/dellServer.jpg" id='dell-img'/> 
+
+<h2><span class="normal-weight">Cores</span> 48&nbsp;&nbsp;&nbsp;<span class="normal-weight">Memory</span> 768GB</h2>
+<div class="dell-chart">
+          <h4>Benchmark Time</h4>
+      		<div class="chartTime">
+          <h1 class="dell-time">7+ Hours
+      	  </h1>
+    		</div>
+    		   
+          <h4 span style="padding-top:25px;">Queries/$</h4>
+      	 <div class="chartQueries">
+           <h1 class="dell-query">.
+     	   </h1>
+     	   <h1 class="float-text">1x</h1>
+         </div>
+         </div>
+ 
+</nav> <!-- End dell-example -->
+
+
+
+<section class="tidalscale">
+ <div class="logo"><img align="center" src="img/ts_logo_lg-wht.png"></div>
+
+
+  <div class="control-row first">
+    <h1>Software-Defined Server</h1>
+    <!-- <div class="logo"><img align="center" style="max-width:500px;" src="img/lenovo_wht.png"></div> -->
+<img src="img/ServerRack_0b.png" id='img'/> 
+</div>
+
+ <div class="control-row second"> 
+<h2>Cores <span id="coreStatus">0</span>&nbsp;&nbsp;&nbsp;Memory <span id="memStatus">0</span></h2>
+<div class="toggle">
+  <h3>Oracle In-Memory</h3>
+  <div class="toggle-switch">
+<!-- Rounded switch -->
+  <label class="switch">
+  <input type="checkbox" id="oracle" onclick="oracleSwitch()">
+  <span class="slider round"></span>
+</label>
+  </div>
+  </div>
+  <div class="clear"></div>
+
+  <div class="slide-control">
+  <input type="range" id="slider" value="0" min="0" max="4" step="0" />
+  <p>Nodes = <span id="sliderStatus">0</span></p>
+  </div>
+
+  </div>
+  
+
+
+<div class="clear"></div>
+<div class="chart">
+          <h4>Benchmark Time</h4>
+      		<div class="chartTime">
+          <h1 id="time-text">0
+      	  </h1>
+    		</div>
+    		   
+          <h4>Queries/$</h4>
+      	 <div class="chartQueries">
+           <h1 id="query-text">0
+     	   </h1>
+         </div>
+         </div>
+         
+</section> <!-- End tidalscale -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="js/tidalscale.js"></script>
+
+<script>
+
+// var oracleOn = [
+//   { imageURL: 'img/ServerRack_0b.png', cores: 0, memory: 0, time: '0', width:'0', color: '#03496e', query: '0', qwidth: '0', qcolor: '#03496e' }, 
+//   { imageURL: 'img/ServerRack_1b.png', cores: 12, memory: '768GB', time: '7 Hours', width: '100%', color: '#FA0228', query: '0.6x', qwidth: '1%', qcolor: '#FA0228' },
+//   { imageURL: 'img/ServerRack_2b.png', cores: 24, memory: '1536GB', time: '5 Min', width: '15%', color: '#00DD3B', query: '25x', qwidth: '100%', qcolor: '#00DD3B' },
+//   { imageURL: 'img/ServerRack_3b.png', cores: 36, memory: '2304GB', time: '5 Min', width: '15%', color: '#00DD3B', query: '16x', qwidth: '64%', qcolor: '#00DD3B' },
+//   { imageURL: 'img/ServerRack_4b.png', cores: 48, memory: '3072GB', time: '5 Min', width: '15%', color: '#00DD3B', query: '12x', qwidth: '48%', qcolor: '#00DD3B'}
+// ];
+// var oracleOff = [
+//   { imageURL: 'img/ServerRack_0b.png', cores: 0, memory: 0, time: '0', width: '0', color: '#03496e', query: '0', qwidth: '0', qcolor: '#03496e' },
+//   { imageURL: 'img/ServerRack_1b.png', cores: 12, memory: '768GB', time: '7 Hours', width: '100%', color: '#FA0228', query: '1x', qwidth: '2%', qcolor: '#FA0228' }, 
+//   { imageURL: 'img/ServerRack_2b.png', cores: 24, memory: '1536GB', time: '33 Minutes', width: '33%', color: '#00DD3B', query: '6.5x', qwidth: '26%', qcolor: '#00DD3B' },
+//   { imageURL: 'img/ServerRack_3b.png', cores: 36, memory: '2304GB', time: '33 Minutes', width: '33%', color: '#00DD3B', query: '5x', qwidth: '20%', qcolor: '#00DD3B' }, 
+//   { imageURL: 'img/ServerRack_4b.png', cores: 48, memory: '3072GB', time: '33 Minutes', width: '33%', color: '#00DD3B', query: '3x', qwidth: '12%', qcolor: '#00DD3B' }
+// ];
+// 
+// var checkBox = document.getElementById("oracle");
+// 
+// var changeData = function(arr, i){  
+//   $('#sliderStatus').html( i );
+//   $("#img").prop("src", arr[i].imageURL);
+//   $("#coreStatus").html(arr[i].cores);
+//   $("#memStatus").html(arr[i].memory);
+//   $("#time-text").html(arr[i].time);
+//   $("#time-text").css({ width: arr[i].width, background: arr[i].color });
+//   $("#query-text").html(arr[i].query);
+//   $("#query-text").css({ width: arr[i].qwidth, background: arr[i].qcolor });
+// };
+// 
+// $(document).on('change', '#slider', function() {
+//     var v = $(this).val(),
+//         num = parseInt(v, 10);
+//   
+//     if (checkBox.checked == true) {
+//       
+//       changeData(oracleOn, num);
+//       
+//     } else { 
+//       
+//       changeData(oracleOff, num);
+//       
+//     }
+// });
+// 
+// $(document).on('change', '#oracle', function(){
+//     var n = $('#slider').val(),
+//         numb = parseInt(n, 10);
+//   
+//     if (checkBox.checked == true) {
+//       
+//       changeData(oracleOn, numb);
+//       
+//     } else { 
+//       
+//       changeData(oracleOff, numb);
+//       
+//     }
+// })
+    
+   
+</script>
+
+</body>

@@ -1,0 +1,305 @@
+/* General styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+body {
+ background-color: #03496e;
+  color: #fafafa;
+  font-family: "poppins", sans-serif;
+  font-size: 2.6em;
+  text-align:center;
+}
+
+h1,h2,h3 {
+font-family: 'poppins', sans-serif;
+font-weight:600;
+text-transform:none;
+font-size:2em;
+}
+
+#img {
+  margin:1em;
+width:60%;
+  border-radius:5px;
+}
+.logo {
+padding-bottom:1em;
+}
+#dell-img {
+width:70%;
+  border-radius:5px;
+  margin:3em 3em 1em;
+  }
+
+/* Page styling LWC aug19 */
+.dell-example {
+z-index:999;
+position:absolute;
+left:0;
+top:0;
+height:100%;
+width:100%;
+max-width:85%;
+background:#fafafa;
+color:#03496e;
+/* box-sizing:border-box; */
+/* padding:20px; */
+margin-left: -85%;
+transition: margin 300ms ease-in-out;
+}
+.dell-example.nav-open{
+margin-left:0;
+}
+.nav-toggle {
+font-size:1.1em;
+position:absolute;
+right: -575px;
+top:40%;
+width:600px;
+height:150px;
+border-radius:10px;
+background:#fafafa;
+color:#03496e;
+text-decoration:none;
+line-height:1.5em;
+text-align:center;
+padding-top:50px;
+transform: rotate(-90deg);
+	transform-origin: left top 0;
+}
+.nav-toggle:before {
+content: "Traditional Server";
+}
+.dell-example.nav-open .nav-toggle:before {
+content: "Software-Defined Server"
+}
+.normal-weight {
+font-weight:normal;
+}
+.tidalscale {
+margin:1em;
+width:100%;
+}
+
+.control-row {
+/* width:50%; */
+text-align:center;
+  float:left;
+}
+
+.first {
+width:60%;
+margin:0.5em 0;
+}
+.second {
+float:left;
+text-align:left;
+margin:4em 0 3em;
+}
+.toggle {
+  margin:1.5em 0;
+}
+.toggle h3 {
+  float:left;
+}
+.toggle-switch {
+float:left;
+margin:0.70em 2em;
+  padding-top:18px;
+}
+.clear {
+clear:both;
+}
+.slide-control {
+  margin:1.5em 0;
+}
+.slide-control p {
+  padding-top:25px;
+}
+.chart {
+text-align:left;
+margin:0 0 3em 3em;
+}
+.dell-chart {
+text-align:left;
+margin:3em 0 2em 3em;
+}
+.dell-time {
+padding:0.5em;
+width:100%;
+background:red;
+height:2em;
+color:#fafafa;
+}
+.dell-query {
+padding:0.5em;
+width:1%;
+background:red;
+height:2em;
+color:red;
+float:left;
+}
+.float-text {
+float:left;
+padding:0.5em;
+height:2em;
+}
+#time-text {
+padding:0.5em;
+  vertical-align:middle;
+width:10%;
+background: #03496e;
+height:2em;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s;
+}
+#query-text {
+padding:0.5em;
+   vertical-align:middle;
+width:10%;
+background: #03496e;
+height:2em;
+-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s;
+}
+
+
+/* Remove default form element appearance */
+
+input[type="range"] {
+  -webkit-appearance: none;  
+  -moz-appearance: none;}
+
+
+/* positioning and background image*/
+
+input[type="range"] {
+  width: 300px;
+  height: 26px;
+/*   color:tomato; */
+  background: #ddd;
+  background: repeating-linear-gradient(90deg, #398697, #398697 2px, transparent 0px, transparent 71px);
+  background-repeat: no-repeat;
+  background-size: 286px 100%;
+  background-position: 7px center;
+}
+
+
+/* Form element re-Styling */
+
+input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: #fafafa;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 3px solid #03496e;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #fff;
+  margin-top: -6px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+
+/* CSS alt colour */
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: #fafafa;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  border-color: #398697;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  border-color: #398697;
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  border-color: #398697;
+}
+
+
+/* Toggle Button Styling */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 51px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 43px;
+  width: 43px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
